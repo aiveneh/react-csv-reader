@@ -1,5 +1,6 @@
 import React from 'react';
 import { string, func, element, oneOfType } from 'prop-types';
+
 const PapaParse = require('papaparse/papaparse.min.js');
 
 const CSVReader = ({
@@ -25,6 +26,7 @@ const CSVReader = ({
           error: onError
         })
       );
+
       onFileLoaded(csvData.data, filename);
     };
 
@@ -39,7 +41,7 @@ const CSVReader = ({
         type="file"
         id={inputId}
         style={inputStyle}
-        accept=".csv, text/csv"
+        accept=".csv, text/csv, .xlsx, text/xlsx"
         onChange={e => handleChangeFile(e)}
       />
     </div>
